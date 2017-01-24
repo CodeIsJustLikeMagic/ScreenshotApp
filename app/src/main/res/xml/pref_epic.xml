@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="crop">
+        <SwitchPreference
+            android:key="crop_not_standalone_preference"
+            android:title="on intent"
+            android:summary="crops when the app is not standalone"
+            android:defaultValue="false"/>
+        <SwitchPreference
+            android:key="crop_standalone_preference"
+            android:title="standalone"
+            android:summary="crops when the app is standalone"
+            android:defaultValue="true"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="image">
+        <ListPreference
+            android:key="image_file_preference"
+            android:title="default imagefile"
+            android:summary="you can allways override this setting by specifing the filename extention. (e.g.: batman.jpg)"
+            android:entries="@array/epicFileEndlings"
+            android:entryValues="@array/epicFileEndlings"/>
+        <EditTextPreference
+            android:key="image_quality_preference"
+            android:title="image quality"
+            android:summary="0 for small images 100 for max quality (PNG which is lossless will ignore qualitiy setting)"
+            android:defaultValue="1000"
+            android:numeric="integer"/>
+        <EditTextPreference
+            android:key="image_width_preference"
+            android:title="image width"
+            android:summary="width of the image that will be send to another app. Other apps might not be abel to use images that are to large"
+            android:defaultValue="480"
+            android:numeric="integer"/>
+        <SwitchPreference
+            android:key="save_in_gallery"
+            android:title="save in Gallery"
+            android:defaultValue="true"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="connection">
+        <EditTextPreference
+            android:key="default_port_preference"
+            android:title="default port setting"
+            android:summary="this port will be used if there is no port specified"
+            android:defaultValue="100"
+            android:numeric="integer"/>
+        <SwitchPreference
+            android:key="insta_on_intent"
+            android:title="insta on intent"
+            android:summary="do not ask for IP if started by another app"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+</PreferenceScreen>
